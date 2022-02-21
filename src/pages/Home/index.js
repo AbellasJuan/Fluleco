@@ -13,7 +13,7 @@ export default function Home(){
                 type="text" 
                 placeholder="Nome" 
                 value={name} 
-                maxlength="12" 
+                maxlength="25" 
                 onChange={e => setName(e.target.value)}/>
         </Container>
     )
