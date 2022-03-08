@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Container, LetterScreen, FirstRowScreen } from "../Tela/style.js"
 
-export default function Tela(){
+export default function Tela({palavraProvisoriaDoUsuario}){
     
     const [ palavraEscolhida, setPalavraEscolhida ] = useState([]);
 
-    const [ respostaUsuario, setRespostaUsuario ] = useState([]);
-
     const palavras = ['ROMERITO', 'FRED', 'RIVELINO', 'GANSO', 'CONCA'];
+
+    const [letraAtual, setLetraAtual] = useState();
 
     function shuffleArray(){
         const palavrasEmbaralhadas = palavras.sort(() => Math.random() - 0.5);
@@ -19,14 +19,24 @@ export default function Tela(){
     // eslint-disable-next-line
     useEffect(shuffleArray,[]);
 
-    console.log(palavraEscolhida);
+
+    function mesmoNumeroDeCasas(){
+        palavraProvisoriaDoUsuario.length = palavraEscolhida.length;
+    }
+    
+    console.log(palavraEscolhida)
+    console.log(palavraProvisoriaDoUsuario)
+
 
     return(
         <Container>
 
                 {<FirstRowScreen>
-                    {palavraEscolhida.map((letter, index) => 
-                        <LetterScreen key={index}> </LetterScreen>
+                    {palavraProvisoriaDoUsuario.map((letraAtual, index) =>
+                        
+                        <LetterScreen key={index}> { letraAtual } </LetterScreen>
+                            
+                        
                     )}    
                 </FirstRowScreen>}
                 

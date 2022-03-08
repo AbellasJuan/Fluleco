@@ -19,7 +19,7 @@ const ThirdRow = styled.div`
     padding-left: 2em;
 `
 
-const Letter = styled.button`
+const Letter = styled.input`
     align-self: center;
     width: 4.1em;
     height: 4.3em;
