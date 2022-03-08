@@ -11,8 +11,11 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-    font-size: 30px;
+    font-size: 3em;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    color: #B22222
 `
 
 export { Container, Title };

@@ -3,7 +3,9 @@ import { Container, LetterScreen, FirstRowScreen } from "../Tela/style.js"
 
 export default function Tela(){
     
-    const [ palavraEscolhida, setPalavraEscolhida ] = useState([])
+    const [ palavraEscolhida, setPalavraEscolhida ] = useState([]);
+
+    const [ respostaUsuario, setRespostaUsuario ] = useState([]);
 
     const palavras = ['ROMERITO', 'FRED', 'RIVELINO', 'GANSO', 'CONCA'];
 
@@ -15,34 +17,16 @@ export default function Tela(){
     }
 
     // eslint-disable-next-line
-    useEffect( shuffleArray,[]);
+    useEffect(shuffleArray,[]);
+
+    console.log(palavraEscolhida);
 
     return(
         <Container>
 
                 {<FirstRowScreen>
                     {palavraEscolhida.map((letter, index) => 
-                        <LetterScreen key={index}> {letter} </LetterScreen>
-                    )}    
-                </FirstRowScreen>}
-                {<FirstRowScreen>
-                    {palavraEscolhida.map((index) => 
-                        <LetterScreen key={index}>  </LetterScreen>
-                    )}    
-                </FirstRowScreen>}
-                {<FirstRowScreen>
-                    {palavraEscolhida.map((index) => 
-                        <LetterScreen key={index}>  </LetterScreen>
-                    )}    
-                </FirstRowScreen>}
-                {<FirstRowScreen>
-                    {palavraEscolhida.map((index) => 
-                        <LetterScreen key={index}>  </LetterScreen>
-                    )}    
-                </FirstRowScreen>}
-                {<FirstRowScreen>
-                    {palavraEscolhida.map((index) => 
-                        <LetterScreen key={index}>  </LetterScreen>
+                        <LetterScreen key={index}> </LetterScreen>
                     )}    
                 </FirstRowScreen>}
                 

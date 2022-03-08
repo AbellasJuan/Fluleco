@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
                 font-size: 100%;
                 font-weight: normal;
                 vertical-align: baseline;
-                font-family: 'Ubuntu', sans-serif;
+                font-family: 'Roboto', sans-serif;
                 box-sizing: border-box;
                ::-webkit-scrollbar {
                         width: 8px;

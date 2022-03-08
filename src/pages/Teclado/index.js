@@ -21,7 +21,7 @@ export default function Teclado(){
                     <Letter key={index}> {letter} </Letter>
                 )}
             </SecondRow>
-
+            
             <ThirdRow>
                 {lettersZtoENTER.map((letter, index) => 
                     <Letter key={index}> {letter} </Letter>
@@ -29,4 +29,4 @@ export default function Teclado(){
             </ThirdRow>
         </Container>
     )
-}
+};

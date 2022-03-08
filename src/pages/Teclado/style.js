@@ -24,7 +24,7 @@ const Letter = styled.button`
     width: 4.1em;
     height: 4.3em;
     margin-right: 0.2em;
-    border: 0.2em solid brown;
+    border: 0.22em solid #B22222;
     border-radius: 10%;
     text-align: center;
     font-weight: 900;
