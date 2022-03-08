@@ -1,20 +1,19 @@
-import { useState } from "react";
-import { Container, Title, NameInput } from "./style.js";
+// import { useState } from "react";
+import { Container, Title } from "./style.js";
+import Teclado from "../Teclado/index.js";
+import Tela from "../Tela/index.js";
 
 export default function Home(){
     
-    const [name, setName] = useState('')
+    // const [name, setName] = useState('')
 
     return(
         <Container>
             <Title>FLULECO</Title>
 
-            <NameInput 
-                type="text" 
-                placeholder="Nome" 
-                value={name} 
-                maxlength="25" 
-                onChange={e => setName(e.target.value)}/>
+            <Tela/>
+
+            <Teclado/>
         </Container>
     )
 }
