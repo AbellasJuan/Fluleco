@@ -64,12 +64,13 @@ export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisor
                         type="button"
                         value={letter}
                         onClick={event => autorizarHabilitarTeclado(event.target.value)}
-                    />)}
+                    ></Letter>)}
                 </FirstRow>
             
                 <SecondRow>
                     {lettersAToAPAGAR.map((letter, index) => 
                         <Letter 
+                            apagar={index}
                             key={index}
                             type="button"
                             value={letter}
@@ -86,7 +87,7 @@ export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisor
                             onClick={event => autorizarHabilitarTeclado(event.target.value)}
                         />)}
                         
-                    <Letter type="submit" value="ENTER"/>
+                    <Letter type="submit" enter={'enter'} value="ENTER"/>
                 </ThirdRow>
             </form>
         </Container>

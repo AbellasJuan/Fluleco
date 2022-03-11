@@ -4,7 +4,7 @@ const Container = styled.div`
     margin-top: 3em;
     width: 40em;
     height: 32em;
-    border: 0.2em solid white;
+    border: 0.4em solid white;
     border-radius: 2%;
     display: flex;
 
@@ -12,7 +12,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    background-color: beige;
+    background-color: whitesmoke;
 `
 
 const FirstRowScreen = styled.div`
@@ -20,23 +20,26 @@ const FirstRowScreen = styled.div`
     justify-content: center;
 
     margin-left: 10px;
-    margin-bottom: 10px;
 `
 
 const LetterScreen = styled.div`
-    width: 4.1em;
-    height: 4.3em;
-
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    margin-right: 0.2em;
+    width: 2.5em;
+    height: 2.5em;
     
-    border: 0.2em solid brown;
+    margin-right: 0.2em;
+
+    border: 0.22em solid #B22222;
     border-radius: 10%;
     
-    font-weight: 900;
+    font-family: 'Syne Mono', monospace;
+    font-size: 30px;
+    font-weight: 600;
+    color: green;
+;
 `
 
 export { Container, LetterScreen, FirstRowScreen };
