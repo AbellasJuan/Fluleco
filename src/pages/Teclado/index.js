@@ -1,6 +1,6 @@
 import { Container, Letter, FirstRow, SecondRow, ThirdRow } from "./style"
 
-export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisoriaDoUsuario, palavraSorteada }){
+export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisoriaDoUsuario, palavraSorteada, shuffleArray }){
 
     const lettersToP = ['Q', 'W', 'E' ,'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
 
@@ -11,16 +11,31 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
     function enviarRespostaDoUsuario(e){
         e.preventDefault();
         console.log('enviou')
+        darResultado(palavraProvisoriaDoUsuario, palavraSorteada);
     };
 
+    function darResultado(respostaUsuario, respostaCorreta) {
+        const resposta = respostaUsuario?.length === respostaCorreta.length && respostaUsuario?.every((value, index) => value === respostaCorreta[index]);
+        if(resposta){
+            shuffleArray()
+            setPalavraProvisoriaDoUsuario([]);
+            return alert('PARABÉNS!! VOCÊ ACERTOU!!')
+        } else {
+            shuffleArray();
+            setPalavraProvisoriaDoUsuario([]);
+            return alert(' VOCÊ ERROU :( ')
+            
+        }
+    }
+
     function verificaSeEhUltimaLetra(item, index){
-        if(index !== (palavraProvisoriaDoUsuario.length)-1){
+        if(index !== (palavraProvisoriaDoUsuario?.length)-1){
             return true;
         }
     };
 
     function autorizarHabilitarTeclado(e){
-        if((palavraSorteada.length === palavraProvisoriaDoUsuario.length) && (e !== 'APAGAR')){
+        if((palavraSorteada?.length === palavraProvisoriaDoUsuario?.length) && (e !== 'APAGAR')){
             return;
         } else {
             funcionalidadeTeclado(e);
@@ -30,7 +45,7 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
     function funcionalidadeTeclado(e){
         
         if(e === 'APAGAR'){
-           const apagar = palavraProvisoriaDoUsuario.filter(verificaSeEhUltimaLetra); 
+           const apagar = palavraProvisoriaDoUsuario?.filter(verificaSeEhUltimaLetra); 
            setPalavraProvisoriaDoUsuario(apagar);
 
         }else{

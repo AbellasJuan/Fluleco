@@ -1,16 +1,7 @@
 import { useEffect } from "react";
 import { Container, LetterScreen, FirstRowScreen } from "../Tela/style.js"
 
-export default function Tela({palavraProvisoriaDoUsuario, palavraSorteada, setPalavraSorteada}){
-    
-    const palavras = ['CANO', 'ARIAS', 'YAGO', 'CRISTIANO', 'GANSO', 'FABIO', 'DAVID', 'NINO', 'ANDRE'];
-    
-    function shuffleArray(){
-        const palavrasEmbaralhadas = palavras.sort(() => Math.random() - 0.5);
-        const unicaPalavra = palavrasEmbaralhadas[0];
-        const letrasSeparadas = unicaPalavra.split('');
-        setPalavraSorteada(letrasSeparadas);
-    }
+export default function Tela({palavraProvisoriaDoUsuario, palavraSorteada, setPalavraSorteada, shuffleArray}){
     
     // eslint-disable-next-line
     useEffect(shuffleArray, []);
