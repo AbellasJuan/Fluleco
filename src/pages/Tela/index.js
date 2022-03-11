@@ -1,29 +1,33 @@
 import { useEffect, useState } from "react";
 import { Container, LetterScreen, FirstRowScreen } from "../Tela/style.js"
 
-export default function Tela({palavraProvisoriaDoUsuario, setPalavraProvisoriaDoUsuario}){
+export default function Tela({palavraProvisoriaDoUsuario, palavraSorteada, setPalavraSorteada}){
     
-    const palavras = ['ROMERITO', 'FRED', 'RIVELINO', 'GANSO', 'CONCA'];
+    const palavras = ['CANO', 'ARIAS', 'YAGO', 'CRISTIANO', 'GANSO', 'FABIO', 'DAVID', 'NINO', 'ANDRE'];
     
-    const [ palavraSorteada, setPalavraSorteada ] = useState([]);
-
     function shuffleArray(){
         const palavrasEmbaralhadas = palavras.sort(() => Math.random() - 0.5);
         const unicaPalavra = palavrasEmbaralhadas[0];
         const letrasSeparadas = unicaPalavra.split('');
-        palavraProvisoriaDoUsuario.length = letrasSeparadas.length;
         setPalavraSorteada(letrasSeparadas);
     }
     
     // eslint-disable-next-line
     useEffect(shuffleArray, []);
-
-    function colocarLetra(){
-
-    }
     
     console.log(palavraSorteada)
     console.log(palavraProvisoriaDoUsuario)
+
+    // function colocarLetra(index){
+    //     return console.log(index)
+    //     palavraProvisoriaDoUsuario[index]
+    // }
+
+    // if(palavraProvisoriaDoUsuario[index] === true){
+    //     return palavraProvisoriaDoUsuario[index]
+    // } else{
+    //     return ''
+    // }
 
     return(
         <Container>
@@ -31,7 +35,12 @@ export default function Tela({palavraProvisoriaDoUsuario, setPalavraProvisoriaDo
                 {<FirstRowScreen>
                     {palavraSorteada?.map((letraDaSorteada, index) =>
                         
-                        <LetterScreen key={index}>  </LetterScreen>
+                        <LetterScreen key={index}> 
+                        
+                        { palavraProvisoriaDoUsuario[index] ? 
+                        palavraProvisoriaDoUsuario[index] : '' } 
+                        
+                        </LetterScreen>
                             
                     )}    
                 </FirstRowScreen>}
