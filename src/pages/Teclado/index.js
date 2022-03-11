@@ -6,9 +6,10 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
 
     const lettersAToAPAGAR = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ç', 'APAGAR'];
 
-    const lettersZtoENTER = ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'ENTER'];
+    const lettersZtoENTER = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
 
-    function enviarRespostaDoUsuario(){
+    function enviarRespostaDoUsuario(e){
+        e.preventDefault();
         console.log('enviou')
     };
 
@@ -69,6 +70,8 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
                             value={letter}
                             onClick={event => autorizarHabilitarTeclado(event.target.value)}
                         />)}
+                        
+                    <Letter type="submit" value="ENTER"/>
                 </ThirdRow>
             </form>
         </Container>

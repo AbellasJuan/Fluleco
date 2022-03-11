@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Container, LetterScreen, FirstRowScreen } from "../Tela/style.js"
 
 export default function Tela({palavraProvisoriaDoUsuario, palavraSorteada, setPalavraSorteada}){
@@ -15,20 +15,6 @@ export default function Tela({palavraProvisoriaDoUsuario, palavraSorteada, setPa
     // eslint-disable-next-line
     useEffect(shuffleArray, []);
     
-    console.log(palavraSorteada)
-    console.log(palavraProvisoriaDoUsuario)
-
-    // function colocarLetra(index){
-    //     return console.log(index)
-    //     palavraProvisoriaDoUsuario[index]
-    // }
-
-    // if(palavraProvisoriaDoUsuario[index] === true){
-    //     return palavraProvisoriaDoUsuario[index]
-    // } else{
-    //     return ''
-    // }
-
     return(
         <Container>
 
