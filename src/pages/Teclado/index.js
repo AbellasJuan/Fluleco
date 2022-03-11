@@ -1,4 +1,3 @@
-import { useEffect} from "react";
 import { Container, Letter, FirstRow, SecondRow, ThirdRow } from "./style"
 
 export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisoriaDoUsuario, letraClicada, setLetraClicada}){
@@ -11,14 +10,7 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
 
     function enviarRespostaDoUsuario(){
         console.log('enviou')
-    }
-
-    function colocarLetraClicadaNaPalavraProvisoria(){
-        setPalavraProvisoriaDoUsuario([...palavraProvisoriaDoUsuario, letraClicada])      
-    }
-
-    // eslint-disable-next-line
-    useEffect(colocarLetraClicadaNaPalavraProvisoria, [letraClicada])
+    };
 
     return(
         <Container>
@@ -30,7 +22,7 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
                         key={index}
                         type="button"
                         value={letter}
-                        onClick={e => setLetraClicada(e.target.value)}
+                        onClick={e => setPalavraProvisoriaDoUsuario([...palavraProvisoriaDoUsuario, e.target.value])}
                     />)}
                 </FirstRow>
             
@@ -40,7 +32,7 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
                             key={index}
                             type="button"
                             value={letter}
-                            onClick={e => setLetraClicada(e.target.value)}
+                            onClick={e => setPalavraProvisoriaDoUsuario([...palavraProvisoriaDoUsuario, e.target.value])}
                         />)}
                 </SecondRow>
                 
@@ -50,7 +42,7 @@ export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisori
                             key={index}
                             type="button"
                             value={letter}
-                            onClick={e => setLetraClicada(e.target.value)}
+                            onClick={e => setPalavraProvisoriaDoUsuario([...palavraProvisoriaDoUsuario, e.target.value])}
                         />)}
                 </ThirdRow>
             </form>

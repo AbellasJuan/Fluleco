@@ -3,30 +3,26 @@ import { Container, LetterScreen, FirstRowScreen } from "../Tela/style.js"
 
 export default function Tela({palavraProvisoriaDoUsuario}){
     
-    const [ palavraEscolhida, setPalavraEscolhida ] = useState([]);
-
     const palavras = ['ROMERITO', 'FRED', 'RIVELINO', 'GANSO', 'CONCA'];
-
-    const [letraAtual, setLetraAtual] = useState();
+    
+    const [ palavraSorteada, setPalavraSorteada ] = useState([]);
 
     function shuffleArray(){
         const palavrasEmbaralhadas = palavras.sort(() => Math.random() - 0.5);
         const unicaPalavra = palavrasEmbaralhadas[0];
         const letrasSeparadas = unicaPalavra.split('');
-        setPalavraEscolhida(letrasSeparadas);
+        setPalavraSorteada(letrasSeparadas);
     }
 
     // eslint-disable-next-line
-    useEffect(shuffleArray,[]);
+    useEffect(shuffleArray, []);
 
-
-    function mesmoNumeroDeCasas(){
-        palavraProvisoriaDoUsuario.length = palavraEscolhida.length;
-    }
+    // function mesmoNumeroDeCasas(){
+    //     palavraProvisoriaDoUsuario.length = palavraSorteada.length;
+    // }
     
-    console.log(palavraEscolhida)
+    console.log(palavraSorteada)
     console.log(palavraProvisoriaDoUsuario)
-
 
     return(
         <Container>
@@ -34,12 +30,11 @@ export default function Tela({palavraProvisoriaDoUsuario}){
                 {<FirstRowScreen>
                     {palavraProvisoriaDoUsuario.map((letraAtual, index) =>
                         
-                        <LetterScreen key={index}> { letraAtual } </LetterScreen>
+                        <LetterScreen key={index}>  </LetterScreen>
                             
-                        
                     )}    
                 </FirstRowScreen>}
-                
+               
         </Container>
     )
-}
+};

@@ -5,8 +5,8 @@ import Tela from "../Tela/index.js";
 
 export default function Home(){
     
-    const [letraClicada, setLetraClicada] = useState("");
     const [palavraProvisoriaDoUsuario, setPalavraProvisoriaDoUsuario] = useState([]);
+    const [letraClicada, setLetraClicada] = useState("");
 
     return(
         <Container>
