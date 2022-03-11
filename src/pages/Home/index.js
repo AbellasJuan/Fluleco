@@ -6,15 +6,14 @@ import Tela from "../Tela/index.js";
 export default function Home(){
     
     const [palavraProvisoriaDoUsuario, setPalavraProvisoriaDoUsuario] = useState([]);
-    const [letraClicada, setLetraClicada] = useState("");
-
+   
     return(
         <Container>
             <Title>FLULECO</Title>
 
             <Tela palavraProvisoriaDoUsuario={palavraProvisoriaDoUsuario} setPalavraProvisoriaDoUsuario={setPalavraProvisoriaDoUsuario}/>
 
-            <Teclado palavraProvisoriaDoUsuario={palavraProvisoriaDoUsuario} setPalavraProvisoriaDoUsuario={setPalavraProvisoriaDoUsuario}  letraClicada={letraClicada} setLetraClicada={setLetraClicada}/>
+            <Teclado palavraProvisoriaDoUsuario={palavraProvisoriaDoUsuario} setPalavraProvisoriaDoUsuario={setPalavraProvisoriaDoUsuario}/>
         </Container>
     )
 }

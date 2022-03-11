@@ -1,6 +1,6 @@
 import { Container, Letter, FirstRow, SecondRow, ThirdRow } from "./style"
 
-export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisoriaDoUsuario, letraClicada, setLetraClicada}){
+export default function Teclado({setPalavraProvisoriaDoUsuario, palavraProvisoriaDoUsuario }){
 
     const lettersToP = ['Q', 'W', 'E' ,'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
 
