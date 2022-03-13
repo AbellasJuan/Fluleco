@@ -37,11 +37,11 @@ const Letter = styled.input`width: 2.5em;
     color: white;
     color: ${(props) => props.apagar === 10 && 'red'};
     width: ${(props) => props.apagar === 10 && '3.7em'};
-
+    background: ${(props) => props.apagar ===10 && 'white'};
+    
     color: ${(props) => props.enter && 'red'};
     width: ${(props) => props.enter && '3.7em'};
-
-    text-shadow: 0.1px 0px 10px #ffffff, 0  0 0.1px white;
+    background: ${(props) => props.enter && 'white'};
 
     :hover{
         transition-duration: 0.2s;

@@ -4,17 +4,19 @@ import Teclado from "../Teclado/index.js";
 import Tela from "../Tela/index.js";
 
 export default function Home(){
-    const palavras = ['CANO', 'CRISTIANO', 'PINEIDA', 'ANDRE'];
+    const palavras = [
+                        {name: 'CANOA', posicao: 'atacante'}, {name: 'CANOB', posicao: 'atacante'}, {name: 'CANOC', posicao: 'atacante'}, {name: 'CANOD', posicao: 'atacante'}
+                    ];
 
     const [palavraProvisoriaDoUsuario, setPalavraProvisoriaDoUsuario] = useState([]);
     const [ palavraSorteada, setPalavraSorteada ] = useState([]);
 
     function shuffleArray(){
         const palavrasEmbaralhadas = palavras.sort(() => Math.random() - 0.5);
-        const unicaPalavra = palavrasEmbaralhadas[0];
+        const unicaPalavra = palavrasEmbaralhadas[0].name;
         const letrasSeparadas = unicaPalavra.split('');
         setPalavraSorteada(letrasSeparadas);
-    }
+    };
 
     return(
         <Container>
