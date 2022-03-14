@@ -1,6 +1,6 @@
 import { Container, Letter, FirstRow, SecondRow, ThirdRow } from "./style"
 
-export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisoriaDoUsuario, palavraSorteada, shuffleArray }){
+export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisoriaDoUsuario, palavraSorteada, shuffleArray, setContador, contador}){
 
     const lettersToP = ['Q', 'W', 'E' ,'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
 
@@ -10,7 +10,8 @@ export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisor
 
     function enviarRespostaDoUsuario(e){
         e.preventDefault();
-        console.log('enviou')
+        setContador(contador + 1)
+        console.log('enviou', contador)
         darResultado(palavraProvisoriaDoUsuario, palavraSorteada);
     };
 
@@ -19,12 +20,7 @@ export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisor
         if(resposta){
             shuffleArray()
             setPalavraProvisoriaDoUsuario([]);
-            return alert('PARABÉNS!! VOCÊ ACERTOU!!')
-        } else {
-            shuffleArray();
-            setPalavraProvisoriaDoUsuario([]);
-            return alert(' VOCÊ ERROU :( ')
-            
+            return alert(`PARABÉNS!! VOCÊ ACERTOU EM ${contador} TENTATIVAS!!`)
         }
     }
 
