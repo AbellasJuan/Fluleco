@@ -22,7 +22,7 @@ export default function Teclado({ setPalavraProvisoriaDoUsuario, palavraProvisor
             setPalavraProvisoriaDoUsuario([]);
             return alert(`PARABÉNS!! VOCÊ ACERTOU EM ${contador} TENTATIVAS!!`)
         }
-    }
+    };
 
     function verificaSeEhUltimaLetra(item, index){
         if(index !== (palavraProvisoriaDoUsuario?.length)-1){

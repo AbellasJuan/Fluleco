@@ -35,7 +35,6 @@ const LetterScreen = styled.div`
     border: 0.22em solid #B22222;
     border-radius: 10%;
     
-    font-family: 'Syne Mono', monospace;
     font-size: 30px;
     font-weight: 600;
     color: green;

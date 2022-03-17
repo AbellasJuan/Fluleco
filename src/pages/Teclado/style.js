@@ -31,7 +31,6 @@ const Letter = styled.input`width: 2.5em;
     border-radius: 10%;
     text-align: center;
     
-    font-family: 'Syne Mono', monospace;
     font-size: 30px;
     font-weight: 600;
     color: white;

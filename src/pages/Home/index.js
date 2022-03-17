@@ -5,8 +5,8 @@ import Tela from "../Tela/index.js";
 
 export default function Home(){
     const palavras = [
-                        {name: 'CANOA', posicao: 'atacanteA', primeiraLetra: 'C'},
-                        {name: 'CANOB', posicao: 'atacanteB'}
+                        {name: 'JOGADORA', posicao: 'ATACANTEA', primeiraLetra: 'C'},
+                        {name: 'JOGADORB', posicao: 'ATACANTEB'}
                     ];
 
     const [palavraProvisoriaDoUsuario, setPalavraProvisoriaDoUsuario] = useState([]);
@@ -26,7 +26,7 @@ export default function Home(){
 
     return(
         <Container>
-            <Title>FLULECO</Title>
+            <Title>LETRECO</Title>
 
             <Tela palavraProvisoriaDoUsuario={palavraProvisoriaDoUsuario} setPalavraProvisoriaDoUsuario={setPalavraProvisoriaDoUsuario} palavraSorteada={palavraSorteada} setPalavraSorteada={setPalavraSorteada} shuffleArray={shuffleArray} objetoSorteado={objetoSorteado} setContador={setContador} contador={contador}/>
 
